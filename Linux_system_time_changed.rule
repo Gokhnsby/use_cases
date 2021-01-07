@@ -1,0 +1,11 @@
+**Linux System Time Changed**
+
+/*When someone try to change system time OR check changes with alert *\
+
+Matching 1 event in 2 Minute with conditions
+(event1.name,time_checker) 
+AND ((event1.commandExecute, timedatectl) OR (event1.commandExecute, date) OR (event1.commandExecute, hwclock))
+Matching 1 event in each execution
+<checking the logs>
+(event.name,time_changed)
+AND ((event2.commandExecute, 'grep “Time has been changed” /var/log/messages') OR (event2.Execute 'journalctl | grep "Time has been changed"'))

@@ -1,0 +1,10 @@
+**Linux Logs Changed**
+
+/*When someone try to change /var/log/* path OR *\
+
+Matching 1 event in 2 Minute with conditions
+(event1.name,linux_path_check) 
+AND ((event1.filePath, \var\log\*) 
+OR
+event2(File Path Contains "\var\log\" [ignore case]))
+AND((commandExecute, vi) OR (commandExecute, nano) <...>)
