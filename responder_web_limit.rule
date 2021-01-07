@@ -1,0 +1,11 @@
+**Responder Web Limit**
+
+/*hits to error pages *\
+
+Matching 25 events in 1 Minute with conditions
+(event1.name,Responder) 
+AND (event1.deviceAction,blocked) 
+AND (event1.deviceVendor,Traefik OR Citrix OR <...>)
+AND (event1.deviceCustomString1,web_limit_responder_policy) 
+And (( event1.requestUrl,www.abc.com/error) OR ( event1.requestUrl,www.xyx.com <404.html>) OR ( event1.requestUrl,www.abc.com/.../error <404.php>))
+NOT in(event1.sourceaddress,x.y.z.t,a.b.c.d  <scanners in local>)
